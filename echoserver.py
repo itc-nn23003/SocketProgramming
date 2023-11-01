@@ -28,8 +28,8 @@ def main(IP_address, Port_number):
     for received_msg in recv_msg(client_socket):
         send_msg(client_socket, received_msg)
         print(f'echo:{received_msg}')
-        client_socket.close()
-        server_socket.close()
+    client_socket.close()
+    server_socket.close()
 
 
 if __name__ == '__main__':
