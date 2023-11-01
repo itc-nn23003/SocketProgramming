@@ -18,9 +18,7 @@ def recv_msg(sock, chunk_len=1024):
         yield received_chunk
 
 
-def main():
-    IP_address = input('ip_address:')
-    Port_number = int(input('port_number:'))
+def main(IP_address, Port_number):
 
     client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     client_socket.connect((IP_address, Port_number))
@@ -34,4 +32,5 @@ def main():
 
 
 if __name__ == '__main__':
-    main()
+    IP_address, Port_number = input().split(',')
+    main(IP_address, int(Port_number))
