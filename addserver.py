@@ -29,7 +29,7 @@ def main():
     print(f'accepted from {client_address}:{client_port}')
     received_msg = b''.join(recv_msg(client_socket, total_msg_size=8))
     print(f'received: {received_msg}')
-    (operand1, operand2) = struct.unpack('!11', received_msg)
+    (operand1, operand2) = struct.unpack('!ii',received_msg)
     print(f'operand1: {operand1}, operand2: {operand2}')
     result = operand1 + operand2
     print(f'result: {result}')
